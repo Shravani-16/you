@@ -27,7 +27,46 @@ class Simple {
             return false;
     }
 
+    // You are given an array of integers A of size N.
+    // Return the difference between the maximum among all even numbers of A and the
+    // minimum among all odd numbers in A.
+    // Problem Constraints
+    // 2 <= N <= 1e^5(1 lakh)
+    // -1e^9 <= A[i] <= 1e^9
+    // There is atleast 1 odd and 1 even number in A
+    // Input Format =The first argument given is the integer array, A.
+    // Output Format =Return maximum among all even numbers of A - minimum among all
+    // odd numbers in A.
+    // Example
+    // A = [0, 2, 9] || -7
+    // A = [5, 17, 100, 1] || 99
+
+    static int diffevenodd(int[] A) {
+
+        int maxEven = 0;
+        int minOdd = 1000;
+        for (int i = 0; i < A.length; i++) {
+            // System.out.println(A[i]);
+            if ((A[i] % 2) == 0) {
+                if (A[i] > maxEven) {
+                    maxEven = A[i];
+                }
+            } else {
+                if (A[i] < minOdd) {
+                    minOdd = A[i];
+                }
+            }
+        }
+        int diffevenodd = maxEven - minOdd;
+        // if(num % 2==0){
+        // System.out.println("number is even");
+        // }
+        return diffevenodd;
+    }
+
     public static void main(String args[]) {
+        int[] A = { 0, 2, 9 };
+        System.out.println(diffevenodd(A));
 
         // for (int i = 1; i < 4; i++) {
         // for (int a = 1; a < i + 1; a++) {
@@ -36,7 +75,8 @@ class Simple {
         // System.out.println();
         // }
         // subtractor
-        System.out.println(substractBinaryNumber(10, 11));
+
+        // System.out.println(substractBinaryNumber(10, 11));
 
     }
 
