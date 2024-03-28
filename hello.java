@@ -58,9 +58,7 @@ class Simple {
             }
         }
         int diffevenodd = maxEven - minOdd;
-        // if(num % 2==0){
-        // System.out.println("number is even");
-        // }
+
         return diffevenodd;
     }
 
